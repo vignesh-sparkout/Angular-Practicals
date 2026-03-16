@@ -1,0 +1,10 @@
+<input type="text" [(ngModel)]="value">
+
+<button type="button" (click)="onShowOrHide()">
+  {{ showLifeCycle ? 'Hide' : 'Show' }}
+</button>
+<br />
+
+<p *ngIf="showLifeCycle">Name: {{ value }}</p>
+
+<app-life-cycle *ngIf="showLifeCycle" [value]="value"></app-life-cycle>
