@@ -1,10 +1,4 @@
-<input type="text" [(ngModel)]="value">
+  <a routerLink="/life-cycle">Lifecycle</a> <br><hr>
+  <a routerLink="/data-binding">Data Binding</a>
 
-<button type="button" (click)="onShowOrHide()">
-  {{ showLifeCycle ? 'Hide' : 'Show' }}
-</button>
-<br />
-
-<p *ngIf="showLifeCycle">Name: {{ value }}</p>
-
-<app-life-cycle *ngIf="showLifeCycle" [value]="value"></app-life-cycle>
+<router-outlet></router-outlet>

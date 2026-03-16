@@ -5,7 +5,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-life-cycle',
   imports: [CommonModule],
   templateUrl: './life-cycle.html',
-  styleUrl: './life-cycle.css',
+  styleUrls: ['./life-cycle.css'],
+  standalone:true
 })
 export class LifeCycle implements OnInit {
 @Input() value: string = '';
