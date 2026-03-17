@@ -11,6 +11,11 @@ import { FormsModule } from "@angular/forms";
 })
 export class Directives {
   result: boolean = false
+  grade = "B"
+  isActive=true
+  textColor='pink'
+  bgColor = 'black'
+  fontSize = '20px'
   title = "Top Five Movies";
   Movies: Movie[] = [
     { title: 'Master', director: 'Lokesh kangaraj', cast: 'Vijay, Sedhupathi, Arjun Das', releaseDate: 'May 20, 2024' },

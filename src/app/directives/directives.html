@@ -35,4 +35,25 @@
     Show <input type="checkbox" [(ngModel)]="result">
 </div>
 <p *ngIf="result">Result Is Checked</p>
-<p *ngIf="!result">Result</p>
+<p *ngIf="!result">Result</p><br>
+<hr>
+
+<h2>ngSwitch</h2>
+<div [ngSwitch]="grade">
+    <p *ngSwitchCase="'A'">Excellent</p>
+    <p *ngSwitchCase="'B'">Good</p>
+    <p *ngSwitchCase="'c'">Average</p>
+    <p *ngSwitchDefault>Fail</p>
+</div><br><hr>
+<h2>Attribute Directives</h2>
+ <h3>ngClass</h3>
+ <button (click)="isActive = !isActive"
+ [ngClass]="isActive  ? 'active' : 'inactive'">Click Here</button>
+ <br><hr>
+ <h3>ngStyle</h3>
+ <p [ngStyle]="{
+    'color':textColor,
+    'font-size':fontSize,
+    'background-color': bgColor
+
+ }">Styled Text with ngStyle</p>    
