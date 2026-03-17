@@ -25,5 +25,7 @@ export class Pipes {
   fruit = "bAnAna";
   Animal = "ELEphant";
   Price = 1500
+  City = "Coimbatore"
+  vegetables = ["Tomatto","pottato", "Onion", "Brinjal","Drum Stick"]
 
 }
