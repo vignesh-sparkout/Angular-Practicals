@@ -20,7 +20,7 @@ export class DataBinding implements OnInit {
     }, 2000);
   }
 
-  changeName(){
+  changeName() {
     this.name = "This is Event Binding";
   }
 

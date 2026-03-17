@@ -1,25 +1,18 @@
 <h2>Data-Binding</h2>
-
 <p>{{name}}</p>
-
 <br>
-
+<hr>
 <div>
   <h3>Property-Binding</h3>
   <button class="btn btn-success" [disabled]="btnToggle">Available</button>
-
   <br>
-
+  <hr>
   <h4>Event Binding</h4>
   <button (click)="changeName()">Click Here</button>
-</div>
-
-<br>
-
+</div><br>
+<hr>
 <h4>Two Way Binding</h4>
-
 <div class="two-way">
   <input type="text" [(ngModel)]="userName" placeholder="Enter Your Name">
-
   <p>Your name : {{userName}}</p>
 </div>

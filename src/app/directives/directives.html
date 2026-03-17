@@ -1,4 +1,5 @@
-<h2>*ngFor</h2>
+<h2>Stuctural Directives</h2>
+<h3>*ngFor</h3>
 <div class="panel panel- primary">
     <div class="panel-heading">
         {{title}}
@@ -44,16 +45,17 @@
     <p *ngSwitchCase="'B'">Good</p>
     <p *ngSwitchCase="'c'">Average</p>
     <p *ngSwitchDefault>Fail</p>
-</div><br><hr>
+</div><br>
+<hr>
 <h2>Attribute Directives</h2>
- <h3>ngClass</h3>
- <button (click)="isActive = !isActive"
- [ngClass]="isActive  ? 'active' : 'inactive'">Click Here</button>
- <br><hr>
- <h3>ngStyle</h3>
- <p [ngStyle]="{
+<h3>ngClass</h3>
+<button (click)="isActive = !isActive" [ngClass]="isActive  ? 'active' : 'inactive'">Click Here</button>
+<br>
+<hr>
+<h3>ngStyle</h3>
+<p [ngStyle]="{
     'color':textColor,
     'font-size':fontSize,
     'background-color': bgColor
 
- }">Styled Text with ngStyle</p>    
+ }">Styled Text with ngStyle</p>

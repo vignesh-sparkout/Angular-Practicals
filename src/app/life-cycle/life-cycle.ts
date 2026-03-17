@@ -6,12 +6,12 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './life-cycle.html',
   styleUrls: ['./life-cycle.css'],
-  standalone:true
+  standalone: true
 })
 export class LifeCycle implements OnInit {
-@Input() value: string = '';
+  @Input() value: string = '';
 
-  constructor() { 
+  constructor() {
     console.log('constructor');
   }
   ngOnInit() {
@@ -37,11 +37,11 @@ export class LifeCycle implements OnInit {
   ngAfterViewInit() {
     console.log('ngAfterViewInit');
   }
-  
+
   ngAfterViewChecked() {
     console.log('ngAfterViewChecked');
-  } 
-   
+  }
+
   ngOnDestroy() {
     console.log('ngOnDestroy');
   }

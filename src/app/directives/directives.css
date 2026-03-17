@@ -61,5 +61,13 @@ td:first-child {
     padding: 1rem;
   }
 }
-.active {background:green; color:white}
-.inactive{background-color:red; color:white}
+
+.active {
+  background: green;
+  color: white
+}
+
+.inactive {
+  background-color: red;
+  color: white
+}
