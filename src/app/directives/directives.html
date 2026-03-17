@@ -1,0 +1,38 @@
+<h2>*ngFor</h2>
+<div class="panel panel- primary">
+    <div class="panel-heading">
+        {{title}}
+    </div>
+    <div class="panel-body">
+        <div class="panel-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Director</th>
+                        <th>Cast</th>
+                        <th>Release Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Movie of Movies; let i=index;">
+                        <td>{{i + 1}}</td>
+                        <td>{{Movie.title}}</td>
+                        <td>{{Movie.director}}</td>
+                        <td>{{Movie.cast}}</td>
+                        <td>{{Movie.releaseDate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<br>
+<hr>
+<h2>ngIf</h2>
+<div>
+    Show <input type="checkbox" [(ngModel)]="result">
+</div>
+<p *ngIf="result">Result Is Checked</p>
+<p *ngIf="!result">Result</p>

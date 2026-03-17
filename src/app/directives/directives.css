@@ -1,0 +1,64 @@
+/* Scoped, simple table styles for the Directives page */
+:host {
+  display: block;
+  padding: 1.5rem;
+  color: #1f2933;
+  background: #f7f9fb;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.panel {
+  max-width: 960px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+}
+
+.panel-heading {
+  padding: 0.9rem 1.2rem;
+  font-weight: 600;
+  border-bottom: 1px solid #d9e2ec;
+}
+
+.panel-body {
+  padding: 1rem 1.2rem 1.2rem;
+}
+
+.panel-responsive {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  padding: 0.7rem 0.8rem;
+  text-align: left;
+  border: 1px solid #e4e7eb;
+}
+
+th {
+  background: #f0f4f8;
+  font-weight: 600;
+}
+
+td:first-child {
+  text-align: center;
+  width: 72px;
+}
+
+@media (max-width: 640px) {
+  :host {
+    padding: 1rem;
+  }
+}
