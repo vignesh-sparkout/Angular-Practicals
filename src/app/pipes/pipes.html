@@ -31,5 +31,14 @@
 <p>{{City | slice:0:4}}</p>
 <hr>
 <h2>JSON Pipe</h2>
-<p>{{vegetables | json}}</p>
+<pre>{{vegetables | json}}</pre>
 <hr>
+<h2>Percent Pipe</h2>
+<p>{{ marks/total|percent}}</p>
+<hr>
+<h2> Custome Pipes</h2>
+<p>{{'Vicky'| custom}}</p>
+<input type="text"[(ngModel)]="searchText" placeholder="Search name">
+<div *ngFor="let user of users | filter:searchText">
+    {{user.name}}
+</div>
