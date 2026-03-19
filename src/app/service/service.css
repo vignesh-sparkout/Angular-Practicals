@@ -1,0 +1,40 @@
+/* Scoped styles for the Theme Service section only */
+.theme-section {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  background: linear-gradient(120deg, #f8fbff, #eef3ff);
+  color: #1b1f2a;
+  transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+.theme-section button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #306fe0;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(48, 111, 224, 0.18);
+}
+
+.theme-section button:hover {
+  background: #2557b5;
+}
+
+.theme-section.dark {
+  background: linear-gradient(120deg, #0f172a, #111827);
+  color: #e5e7eb;
+  border-color: #2d3648;
+}
+
+.theme-section.dark button {
+  background: #14b8a6;
+  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.22);
+}
+
+.theme-section.dark button:hover {
+  background: #0ea58f;
+}
