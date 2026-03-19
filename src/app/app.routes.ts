@@ -4,12 +4,15 @@ import { LifeCycle } from './life-cycle/life-cycle';
 import { Directives } from './directives/directives';
 import { Pipes } from './pipes/pipes';
 import { ParentComponent } from './parent-component/parent-component';
+import { ServiceComponent } from './service/service';
+
 
 export const routes: Routes = [
   { path: 'life-cycle', component: LifeCycle },
   { path: 'data-binding', component: DataBinding },
-  { path: 'directives', component: Directives },
+  { path: 'directives', component: Directives },  
   { path: 'pipes', component: Pipes },
-  { path: 'parent',component:ParentComponent},
+  { path: 'parent', component: ParentComponent },
+  { path: 'service', component: ServiceComponent },
   { path: '', redirectTo: 'data-binding', pathMatch: 'full' }
-];  
+];
