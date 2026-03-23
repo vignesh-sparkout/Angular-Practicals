@@ -21,12 +21,11 @@ import { ThemeService} from './theme';
       <button (click)="toggle()">Toggle Theme</button>
       <p>{{ isDark ? 'Dark Mode' : 'Light Mode' }}</p>
     </div>
-
   `,
   styleUrls: ['./service.css']
 })
 export class ServiceComponent implements OnInit {
-
+ 
   users: string[] = [];
   count:number=0;
   isDark: boolean=false
