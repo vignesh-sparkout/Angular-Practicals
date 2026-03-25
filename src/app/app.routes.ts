@@ -76,7 +76,7 @@ export const routes: Routes = [
 
   // Router Events
   {
-    path: 'events',
+    path: 'router-events',
     loadComponent: () =>
       import('./Router/router-events/router-events').then(m => m.RouterEvents)
   },
