@@ -1,0 +1,21 @@
+<div class="parent-card">
+  <h2>Parent Component</h2>
+
+  <input 
+    [(ngModel)]="parentName" 
+    placeholder="Enter your name"
+    class="input-box"
+  >
+
+  <!-- Parent → Child -->
+  <app-child-component 
+    [name]="parentName"
+    (messageEvent)="onReceiveMessage($event)">
+  </app-child-component>
+
+  <!-- Child → Parent -->
+  <div class="message-box">
+    <p>Message from child:</p>
+    <strong>{{ childMessage }}</strong>
+  </div>
+</div>

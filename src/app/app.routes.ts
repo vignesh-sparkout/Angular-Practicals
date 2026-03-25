@@ -2,59 +2,68 @@ import { Routes } from '@angular/router';
 import { authGuard } from './auth-guard';
 
 export const routes: Routes = [
-
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 
-  // Lazy Routes (No imports needed)
   {
     path: 'life-cycle',
-    loadComponent: () => import('./life-cycle/life-cycle').then(m => m.LifeCycle)
+    loadComponent: () =>
+      import('./life-cycle/life-cycle').then(m => m.LifeCycle)
   },
   {
     path: 'data-binding',
-    loadComponent: () => import('./data-binding/data-binding').then(m => m.DataBinding)
+    loadComponent: () =>
+      import('./data-binding/data-binding').then(m => m.DataBindingComponent)
   },
   {
     path: 'directives',
-    loadComponent: () => import('./directives/directives').then(m => m.Directives)
+    loadComponent: () =>
+      import('./directives/directives').then(m => m.DirectivesComponent)
   },
   {
     path: 'pipes',
-    loadComponent: () => import('./pipes/pipes').then(m => m.Pipes)
+    loadComponent: () =>
+      import('./pipes/pipes').then(m => m.PipesComponent)
   },
   {
     path: 'parent',
-    loadComponent: () => import('./parent-component/parent-component').then(m => m.ParentComponent)
+    loadComponent: () =>
+      import('./parent-component/parent-component').then(m => m.ParentComponent)
   },
   {
     path: 'service',
-    loadComponent: () => import('./service/service').then(m => m.ServiceComponent)
+    loadComponent: () =>
+      import('./service/service').then(m => m.ServiceComponent)
   },
 
-  // Routing Pages
+  // Pages
   {
     path: 'home',
-    loadComponent: () => import('./Router/home/home').then(m => m.Home)
+    loadComponent: () =>
+      import('./Router/home/home').then(m => m.Home)
   },
   {
     path: 'about',
-    loadComponent: () => import('./Router/about/about').then(m => m.About)
+    loadComponent: () =>
+      import('./Router/about/about').then(m => m.About)
   },
   {
     path: 'contact',
-    loadComponent: () => import('./Router/contact/contact').then(m => m.Contact)
+    loadComponent: () =>
+      import('./Router/contact/contact').then(m => m.Contact)
   },
 
-  // Route Param
+  // Param
   {
     path: 'product/:id',
-    loadComponent: () => import('./Router/product/product').then(m => m.Product)
+    loadComponent: () =>
+      import('./Router/product/product').then(m => m.Product)
   },
 
-  // Dashboard (Protected + Child Lazy)
+  // Protected
   {
     path: 'dashboard',
-    loadComponent: () => import('./Router/dashboard/dashboard').then(m => m.Dashboard),
+    loadComponent: () =>
+      import('./Router/dashboard/dashboard').then(m => m.Dashboard),
     canActivate: [authGuard],
     children: [
       {
@@ -65,63 +74,75 @@ export const routes: Routes = [
     ]
   },
 
+  // Router Events
+  {
+    path: 'events',
+    loadComponent: () =>
+      import('./Router/router-events/router-events').then(m => m.RouterEvents)
+  },
+
   // 404
   {
     path: '**',
     loadComponent: () =>
       import('./not-found/not-found').then(m => m.NotFound)
   }
-
 ];
-
-
 
 
 
 
 // import { Routes } from '@angular/router';
 // import { authGuard } from './auth-guard';
-// import { DataBinding } from './data-binding/data-binding';
-// import { LifeCycle } from './life-cycle/life-cycle';
-// import { Directives } from './directives/directives';
-// import { Pipes } from './pipes/pipes';
+
+// import { DataBindingComponent } from './data-binding/data-binding';
+// import { LifeCycleComponent } from './life-cycle/life-cycle';
+// import { DirectivesComponent } from './directives/directives';
+// import { PipesComponent } from './pipes/pipes';
 // import { ParentComponent } from './parent-component/parent-component';
 // import { ServiceComponent } from './service/service';
+
 // import { Home } from './Router/home/home';
 // import { About } from './Router/about/about';
 // import { Contact } from './Router/contact/contact';
 // import { Product } from './Router/product/product';
 // import { Dashboard } from './Router/dashboard/dashboard';
+// import { Profile } from './Router/profile/profile';
+// import { RouterEvents } from './Router/router-events/router-events';
 // import { NotFound } from './not-found/not-found';
 
 // export const routes: Routes = [
-//   { path: '', redirectTo:'home', pathMatch:'full'},
-//   { path: 'life-cycle', component: LifeCycle },
-//   { path: 'data-binding', component: DataBinding },
-//   { path: 'directives', component: Directives },
-//   { path: 'pipes', component: Pipes },
+//   { path: '', redirectTo: 'home', pathMatch: 'full' },
+
+//   // Feature Components
+//   { path: 'life-cycle', component: LifeCycleComponent },
+//   { path: 'data-binding', component: DataBindingComponent },
+//   { path: 'directives', component: DirectivesComponent },
+//   { path: 'pipes', component: PipesComponent },
 //   { path: 'parent', component: ParentComponent },
 //   { path: 'service', component: ServiceComponent },
+
+//   // Pages
 //   { path: 'home', component: Home },
 //   { path: 'about', component: About },
 //   { path: 'contact', component: Contact },
 
-//   //  Route Params
+//   // Route Param
 //   { path: 'product/:id', component: Product },
 
-//   //  Child Routing and Lazy Loading
+//   // Protected + Child Route
 //   {
 //     path: 'dashboard',
 //     component: Dashboard,
-//     canActivate:[authGuard],
+//     canActivate: [authGuard],
 //     children: [
-//       {
-//         path: 'profile',
-//         loadComponent: () =>
-//           import('./Router/profile/profile').then(m => m.Profile)
-//       }
+//       { path: 'profile', component: Profile }
 //     ]
 //   },
-//   { path:'**',component:NotFound}
 
+//   // Router Events
+//   { path: 'events', component: RouterEvents },
+
+//   // 404
+//   { path: '**', component: NotFound }
 // ];

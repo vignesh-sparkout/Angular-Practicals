@@ -1,18 +1,31 @@
-<h2>Data-Binding</h2>
-<p>{{name}}</p>
-<br>
+<h2 class="title">Data Binding</h2>
+
+<!-- Interpolation -->
+<p class="text">{{ title }}</p>
+
 <hr>
-<div>
-  <h3>Property-Binding</h3>
-  <button class="btn btn-success" [disabled]="btnToggle">Available</button>
-  <br>
-  <hr>
-  <h4>Event Binding</h4>
-  <button (click)="changeName()">Click Here</button>
-</div><br>
+
+<!-- Property Binding -->
+<div class="container">
+  <h3>Property Binding</h3>
+  <button [disabled]="btnToggle">
+    {{ btnToggle ? 'Loading...' : 'Available' }}
+  </button>
+</div>
+
 <hr>
-<h4>Two Way Binding</h4>
-<div class="two-way">
+
+<!-- Event Binding -->
+<div class="container">
+  <h3>Event Binding</h3>
+  <button (click)="onChangeTitle()">Click Here</button>
+</div>
+
+<hr>
+
+<!-- Two Way Binding -->
+<div class="container two-way">
+  <h3>Two Way Binding</h3>
   <input type="text" [(ngModel)]="userName" placeholder="Enter Your Name">
-  <p>Your name : {{userName}}</p>
+  <p>Your name: {{ userName }}</p>
 </div>

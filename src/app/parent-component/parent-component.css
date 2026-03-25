@@ -1,0 +1,29 @@
+.parent-card {
+  width: 400px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.input-box {
+  width: 80%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.message-box {
+  margin-top: 20px;
+  padding: 10px;
+  background: #f1f5f9;
+  border-radius: 6px;
+}

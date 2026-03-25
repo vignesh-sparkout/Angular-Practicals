@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
 @Component({
@@ -8,20 +8,19 @@ import { FormsModule } from "@angular/forms";
   templateUrl: './data-binding.html',
   styleUrls: ['./data-binding.css']
 })
-export class DataBinding implements OnInit {
+export class DataBindingComponent {
 
-  name = "String Interpolation";
-  btnToggle: boolean = true;
-  userName: string = "My Name is";
+  title = "String Interpolation";
+  btnToggle = true;
+  userName = "My Name is";
 
-  ngOnInit(): void {
+  constructor() {
     setTimeout(() => {
       this.btnToggle = false;
     }, 2000);
   }
 
-  changeName() {
-    this.name = "This is Event Binding";
+  onChangeTitle() {
+    this.title = "This is Event Binding";
   }
-
 }

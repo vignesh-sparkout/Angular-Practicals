@@ -1,49 +1,71 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnChanges,
+  DoCheck,
+  AfterContentInit,
+  AfterContentChecked,
+  AfterViewInit,
+  AfterViewChecked,
+  OnDestroy,
+  Input,
+  SimpleChanges
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 
 @Component({
   selector: 'app-life-cycle',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './life-cycle.html',
-  styleUrls: ['./life-cycle.css'],
-  standalone: true
+  styleUrls: ['./life-cycle.css']
 })
-export class LifeCycle implements OnInit {
-  @Input() value: string = '';
+export class LifeCycle
+  implements
+    OnInit,
+    OnChanges,
+    DoCheck,
+    AfterContentInit,
+    AfterContentChecked,
+    AfterViewInit,
+    AfterViewChecked,
+    OnDestroy {
+
+  @Input() value: string = 'Default Value';
 
   constructor() {
-    console.log('constructor');
-  }
-  ngOnInit() {
-    console.log('ngOnInit');
+    console.log('1. constructor');
   }
 
-  ngOnChanges() {
-    console.log('ngOnChanges');
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('2. ngOnChanges', changes);
+  }
+
+  ngOnInit() {
+    console.log('3. ngOnInit');
   }
 
   ngDoCheck() {
-    console.log('ngDoCheck');
+    console.log('4. ngDoCheck');
   }
 
   ngAfterContentInit() {
-    console.log('ngAfterContentInit');
+    console.log('5. ngAfterContentInit');
   }
 
   ngAfterContentChecked() {
-    console.log('ngAfterContentChecked');
+    console.log('6. ngAfterContentChecked');
   }
 
   ngAfterViewInit() {
-    console.log('ngAfterViewInit');
+    console.log('7. ngAfterViewInit');
   }
 
   ngAfterViewChecked() {
-    console.log('ngAfterViewChecked');
+    console.log('8. ngAfterViewChecked');
   }
 
   ngOnDestroy() {
-    console.log('ngOnDestroy');
+    console.log('9. ngOnDestroy');
   }
 }

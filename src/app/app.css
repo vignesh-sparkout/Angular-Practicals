@@ -1,3 +1,16 @@
+nav {
+  display: flex;
+  gap: 15px;
+  background: #333;
+  padding: 10px;
+}
+
 a {
-  margin-right: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+a.active {
+  font-weight: bold;
+  border-bottom: 2px solid yellow;
 }

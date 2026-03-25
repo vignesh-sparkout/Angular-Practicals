@@ -9,7 +9,7 @@ import { FormsModule } from "@angular/forms";
   templateUrl: './directives.html',
   styleUrls: ['./directives.css'],
 })
-export class Directives {
+export class DirectivesComponent {
   result: boolean = false
   grade = "B"
   isActive=true

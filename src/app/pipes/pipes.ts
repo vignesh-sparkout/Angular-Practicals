@@ -1,42 +1,62 @@
 import { Component } from '@angular/core';
-import { DatePipe, KeyValuePipe } from '@angular/common';
-import { AsyncPipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
-import { CustomPipe } from '../custom-pipe';
-import { FilterPipe} from '../filter-pipe';
 import { FormsModule } from '@angular/forms';
+import { CustomPipe } from '../custom-pipe';
+import { FilterPipe } from '../filter-pipe';
 
 @Component({
   selector: 'app-pipes',
   standalone: true,
-  imports: [DatePipe, AsyncPipe, KeyValuePipe, CommonModule, CustomPipe,FilterPipe,FormsModule],
+  imports: [CommonModule, FormsModule, CustomPipe, FilterPipe],
   templateUrl: './pipes.html',
   styleUrls: ['./pipes.css'],
 })
-export class Pipes {
-  today = new Date();
-  dataPromise = new Promise(resolve => {
-    setTimeout(() => resolve('Data Loaded'), 2000)
-  })
-  user = {
-    Name: "Vicky",
-    Age: 24,
-    City: "Coimbatore"
+export class PipesComponent {
 
+  // Date Pipe
+  today: Date = new Date();
+
+  // Async Pipe
+  dataPromise: Promise<string> = new Promise((resolve) => {
+    setTimeout(() => resolve('Data Loaded'), 2000);
+  });
+
+  // KeyValue Pipe
+  user: { name: string; age: number; city: string } = {
+    name: "Vicky",
+    age: 24,
+    city: "Coimbatore"
   };
-  fruit = "bAnAna";
-  Animal = "ELEphant";
-  Price = 1500
-  City = "Coimbatore"
-  vegetables = ["Tomatto","pottato", "Onion", "Brinjal","Drum Stick"]
-  marks = 490;
-  total = 600;
-  searchText = '';
 
-  users = [
+  // Text Pipes
+  fruit: string = "bAnAna";
+  animal: string = "ELEphant";
+
+  // Currency Pipe
+  price: number = 1500;
+
+  // Slice Pipe
+  city: string = "Coimbatore";
+
+  // JSON Pipe
+  vegetables: string[] = [
+    "Tomato",
+    "Potato",
+    "Onion",
+    "Brinjal",
+    "Drum Stick"
+  ];
+
+  // Percent Pipe
+  marks: number = 490;
+  total: number = 600;
+
+  // Filter Pipe
+  searchText: string = '';
+
+  users: { name: string }[] = [
     { name: 'Vicky' },
     { name: 'Aravind' },
     { name: 'Kishore' }
   ];
-
 }
