@@ -81,6 +81,13 @@ export const routes: Routes = [
       import('./Router/router-events/router-events').then(m => m.RouterEvents)
   },
 
+  //Template-Driven
+  {
+    path: 'template-driven',
+    loadComponent:() =>
+    import('./template-driven/template-driven').then(m =>m.TemplateDriven)
+  },
+
   // 404
   {
     path: '**',
