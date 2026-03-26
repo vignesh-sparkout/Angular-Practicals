@@ -1,0 +1,72 @@
+<div class="form-page">
+  <div class="card">
+    <h2>Registration Form</h2>
+    
+    <form [formGroup]="useForm" (ngSubmit)="onSubmit()">
+      
+      <!-- Name Field -->
+      <div class="field">
+        <label for="name">Full Name</label>
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          placeholder="Enter your full name" />
+        <small class="error" *ngIf="useForm.get('name')?.invalid && useForm.get('name')?.touched">
+          Name is required.
+        </small>
+      </div>
+
+      <!-- Email Field -->
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="you@example.com">
+        <small class="error" *ngIf="useForm.get('email')?.invalid && useForm.get('email')?.touched">
+          Enter a valid email address.
+        </small>
+      </div>
+
+      <!-- Password Field -->
+      <div class="field">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          placeholder="Enter password" />
+        <small
+          class="error"
+          *ngIf="(useForm.get('password')?.touched || useForm.get('password')?.dirty) &&
+           useForm.get('password')?.errors?.['weakPassword']">
+          Password must be at least 6 characters.
+        </small>
+      </div>
+
+      <!-- Skills Field -->
+      <div>
+        <h3>Skills</h3>
+        <div formArrayName="skills">
+          <div class="field" *ngFor="let skill of getSkillsArray().controls; let i = index">
+            <input
+              [formControlName]="i"
+              type="text"
+              placeholder="Add a skill" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button type="button" (click)="addSkill()">Add Skill</button>
+      </div>
+
+      <div class="actions">
+        <button type="submit" [disabled]="useForm.invalid">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

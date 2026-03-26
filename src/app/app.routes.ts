@@ -88,6 +88,14 @@ export const routes: Routes = [
     import('./template-driven/template-driven').then(m =>m.TemplateDriven)
   },
 
+  // Reactive-Forms
+  {
+    path:'reactive-form',
+    loadComponent:() =>
+    import ('./reactive-form/reactive-form').then(m =>m.ReactiveForm)
+    
+  },
+
   // 404
   {
     path: '**',
