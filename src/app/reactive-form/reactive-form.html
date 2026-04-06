@@ -2,7 +2,7 @@
   <div class="card">
     <h2>Registration Form</h2>
     
-    <form [formGroup]="useForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="useForm">
       
       <!-- Name Field -->
       <div class="field">
@@ -61,11 +61,11 @@
 
       <!-- Actions -->
       <div class="actions">
-        <button type="button" (click)="addSkill()">Add Skill</button>
+        <button type="button" (click)="removeSkill()">Add Skill</button>
       </div>
 
       <div class="actions">
-        <button type="submit" [disabled]="useForm.invalid">Submit</button>
+        <button type="submit" [disabled]="useForm.invalid"  (click)="onSubmit()" >Submit</button>
       </div>
     </form>
   </div>

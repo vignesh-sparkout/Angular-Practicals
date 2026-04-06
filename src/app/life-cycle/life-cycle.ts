@@ -8,8 +8,8 @@ import {
   AfterViewInit,
   AfterViewChecked,
   OnDestroy,
+  SimpleChanges,
   Input,
-  SimpleChanges
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -18,7 +18,6 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './life-cycle.html',
-  styleUrls: ['./life-cycle.css']
 })
 export class LifeCycle
   implements

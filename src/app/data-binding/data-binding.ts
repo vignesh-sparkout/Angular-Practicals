@@ -13,7 +13,6 @@ export class DataBindingComponent {
   title = "String Interpolation";
   btnToggle = true;
   userName = "My Name is";
-
   constructor() {
     setTimeout(() => {
       this.btnToggle = false;

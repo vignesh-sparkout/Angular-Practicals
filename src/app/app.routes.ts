@@ -95,6 +95,11 @@ export const routes: Routes = [
     import ('./reactive-form/reactive-form').then(m =>m.ReactiveForm)
     
   },
+  {
+    path: 'user',
+    loadComponent:() =>
+      import('./user/user').then (m => m.User)
+  },
 
   // 404
   {

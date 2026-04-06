@@ -26,12 +26,12 @@ passwordValidator(control:any){
 }
 
 //FormArray
-  addSkill(){
+  removeSkill(){
     (this.useForm.get('skills') as FormArray)
     .push(new FormControl(''))
   }
   onSubmit(){
-    console.log(this.useForm.value)
+    console.log('login form',this.useForm.value)
   };
   getSkillsArray(): FormArray {
   return this.useForm.get('skills') as FormArray;

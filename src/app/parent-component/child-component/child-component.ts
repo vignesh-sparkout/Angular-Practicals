@@ -14,6 +14,14 @@ import { Component, Input,Output,EventEmitter } from '@angular/core';
 export class ChildComponent {
   @Input()name!:string;
   @Output() messageEvent = new EventEmitter<string>();
+
+ngOnChanges(changes: any) {
+  console.log(changes)
+
+}
+ngOnInit() {
+  console.log('Component initialized');
+}
   sendToParent(){
    this.messageEvent.emit(`hello From Child`)
 }

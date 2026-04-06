@@ -1,61 +1,84 @@
-<h2>Stuctural Directives</h2>
-<h3>*ngFor</h3>
-<div class="panel panel- primary">
-    <div class="panel-heading">
-        {{title}}
-    </div>
-    <div class="panel-body">
-        <div class="panel-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>S.No</th>
-                        <th>Title</th>
-                        <th>Director</th>
-                        <th>Cast</th>
-                        <th>Release Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let Movie of Movies; let i=index;">
-                        <td>{{i + 1}}</td>
-                        <td>{{Movie.title}}</td>
-                        <td>{{Movie.director}}</td>
-                        <td>{{Movie.cast}}</td>
-                        <td>{{Movie.releaseDate}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<h2>Structural Directives</h2>
 
-    </div>
-</div>
+<table border="1" width="100%">
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th>Title</th>
+      <th>Director</th>
+      <th>Cast</th>
+      <th>Release Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let Movie of Movies; let i = index; trackBy: trackedByMovieId">
+      <td>{{ i + 1 }}</td>
+      <td>{{ Movie.title }}</td>
+      <td>{{ Movie.director }}</td>
+      <td>{{ Movie.cast }}</td>
+      <td>{{ Movie.releaseDate }}</td>
+    </tr>
+  </tbody>
+</table>
+
 <br>
+
+<button (click)="addMovie()">Add Movie</button>
+
 <hr>
+
+<!-- ngIf -->
 <h2>ngIf</h2>
-<div>
-    Show <input type="checkbox" [(ngModel)]="result">
-</div>
-<p *ngIf="result">Result Is Checked</p>
-<p *ngIf="!result">Result</p><br>
+
+<label>
+  <input type="checkbox" [(ngModel)]="result"> Show Result
+</label>
+
+<p *ngIf="result">Result Is Checked ✅</p>
+<p *ngIf="!result">Result Not Checked ❌</p>
+
 <hr>
 
+<!-- ngSwitch -->
 <h2>ngSwitch</h2>
+
 <div [ngSwitch]="grade">
-    <p *ngSwitchCase="'A'">Excellent</p>
-    <p *ngSwitchCase="'B'">Good</p>
-    <p *ngSwitchCase="'C'">Average</p>
-    <p *ngSwitchDefault>Fail</p>
-</div><br>
+  <p *ngSwitchCase="'A'">Excellent 🔥</p>
+  <p *ngSwitchCase="'B'">Good 👍</p>
+  <p *ngSwitchCase="'C'">Average 😐</p>
+  <p *ngSwitchDefault>Fail ❌</p>
+</div>
+
 <hr>
-<h2>Attribute Directives</h2>
-<h3>ngClass</h3>
-<button (click)="isActive = !isActive" [ngClass]="isActive  ? 'active' : 'inactive'">Click Here</button>
-<br>
+
+<!-- ngClass -->
+<h2>ngClass</h2>
+
+<button 
+  (click)="isActive = !isActive"
+  [ngClass]="{ active: isActive, inactive: !isActive }">
+  Click Me
+</button>
+
 <hr>
-<h3>ngStyle</h3>
+
+<!-- ngStyle -->
+<h2>ngStyle</h2>
+
 <p [ngStyle]="{
-    'color':textColor,
-    'font-size':fontSize,
-    'background-color': bgColor
- }">Styled Text with ngStyle</p>
+  'color': textColor,
+  'background-color': bgColor,
+  'font-size': fontSize
+}">
+  Styled Text Example
+</p>
+
+<hr>
+
+<!-- Custom Directives -->
+<h2>Custom Directives</h2>
+
+<p appHighlight>Hover ME</p>
+<p [appHover]="'red'">Hover Red</p>
+<p [appHover]="'green'">Hover Red</p>

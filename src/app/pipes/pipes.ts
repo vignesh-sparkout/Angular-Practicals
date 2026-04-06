@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CustomPipe } from '../custom-pipe';
+import { CustomPipe } from './custom-pipe';
 import { FilterPipe } from '../filter-pipe';
 
 @Component({
