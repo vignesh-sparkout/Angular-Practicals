@@ -1,0 +1,12 @@
+<h3>User List</h3>
+    <ul> 
+      <li *ngFor="let user of users">{{ user }}</li>
+    </ul><hr>
+    <h3>CounterService</h3>
+     <p>Count: {{ count }}</p>
+    <button (click)="increase()">Increment</button><hr>
+    <div class="theme-section" [class.dark]="isDark">
+      <h3>Theme Service</h3>
+      <button (click)="toggle()">Toggle Theme</button>
+      <p>{{ isDark ? 'Dark Mode' : 'Light Mode' }}</p>
+    </div>

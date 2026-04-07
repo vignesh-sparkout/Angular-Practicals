@@ -5,3 +5,7 @@
 <button (click)="goToProduct(2)">Product 2</button>
 <button (click)="goToProduct(3)">Product 3</button>
 
+<ul>
+  <li *ngFor="let user of users">{{ user }}</li>
+</ul>
+<button (click)="startInterval()">Start Interval</button>

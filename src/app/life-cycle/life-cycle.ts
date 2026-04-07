@@ -9,14 +9,15 @@ import {
   AfterViewChecked,
   OnDestroy,
   SimpleChanges,
-  Input,
+  Input
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Child } from "./child/child";
 
 @Component({
   selector: 'app-life-cycle',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, Child],
   templateUrl: './life-cycle.html',
 })
 export class LifeCycle
@@ -32,17 +33,21 @@ export class LifeCycle
 
   @Input() value: string = 'Default Value';
 
-  constructor() {
-    console.log('1. constructor');
-  }
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log('2. ngOnChanges', changes);
-  }
+  
+  users: string[] = [];
 
   ngOnInit() {
-    console.log('3. ngOnInit');
+    console.log('ngOnInit called');
+
+    // simulate API call
+    this.users = ['Vignesh', 'John', 'Arun'];
   }
+
+   ngOnChanges() {
+    console.log(' ngOnChanges');
+  }
+
 
   ngDoCheck() {
     console.log('4. ngDoCheck');
@@ -66,5 +71,9 @@ export class LifeCycle
 
   ngOnDestroy() {
     console.log('9. ngOnDestroy');
+  }
+
+  submit(){
+    console.log("click to the submit button")
   }
 }

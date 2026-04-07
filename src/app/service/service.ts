@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { UserService } from '../user';
+import { UserService } from './user';
 import { CommonModule } from '@angular/common';
 import { CounterService } from './counter';
 import { ThemeService} from './theme';
@@ -8,20 +8,7 @@ import { ThemeService} from './theme';
   standalone: true,
   selector: 'app-service',
   imports: [CommonModule],
-  template: `
-    <h3>User List</h3>
-    <ul> 
-      <li *ngFor="let user of users">{{ user }}</li>
-    </ul><hr>
-    <h3>CounterService</h3>
-     <p>Count: {{ count }}</p>
-    <button (click)="increase()">Increment</button><hr>
-    <div class="theme-section" [class.dark]="isDark">
-      <h3>Theme Service</h3>
-      <button (click)="toggle()">Toggle Theme</button>
-      <p>{{ isDark ? 'Dark Mode' : 'Light Mode' }}</p>
-    </div>
-  `,
+  templateUrl:'./service.html' ,
   styleUrls: ['./service.css']
 })
 export class ServiceComponent implements OnInit {

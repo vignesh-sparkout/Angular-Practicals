@@ -16,10 +16,12 @@ export class PipesComponent {
   // Date Pipe
   today: Date = new Date();
 
-  // Async Pipe
+  // // Async Pipe
   dataPromise: Promise<string> = new Promise((resolve) => {
     setTimeout(() => resolve('Data Loaded'), 2000);
+        console.log("Data")
   });
+
 
   // KeyValue Pipe
   user: { name: string; age: number; city: string } = {

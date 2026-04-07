@@ -1,2 +1,14 @@
 <h2> Life-cycle</h2>
 <p><strong>Value:</strong> {{ value }}</p>
+
+<label >enter value</label> 
+<input type="text">
+<button (click)="submit()">Click</button>
+ 
+<h2>ngOnInit Example</h2>
+<div>
+<ul>
+  <li *ngFor="let user of users">{{ user }}</li>
+</ul>
+<app-child></app-child>
+</div>

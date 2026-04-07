@@ -20,11 +20,12 @@ export class Product {
     const id = this.route.snapshot.paramMap.get('id');
     console.log('Snapshot ID:', id);
 
-    // Get ID using subscription 
-    this.route.paramMap.subscribe(params => {
-      this.productId = params.get('id');
-      console.log('Live ID:', this.productId);
-    });
+    
+    // // Get ID using subscription 
+    // this.route.paramMap.subscribe(params => {
+    //   this.productId = params.get('id');
+    //   console.log('Live ID:', this.productId);
+    // });
 
   }
 }

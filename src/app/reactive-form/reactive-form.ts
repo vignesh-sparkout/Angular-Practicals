@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ReactiveForm {
 
-  useForm = new FormGroup ({
+  userForm = new FormGroup ({
     name: new FormControl('',[Validators.required]),
     email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, this.passwordValidator]),
@@ -27,14 +27,14 @@ passwordValidator(control:any){
 
 //FormArray
   removeSkill(){
-    (this.useForm.get('skills') as FormArray)
+    (this.userForm.get('skills') as FormArray)
     .push(new FormControl(''))
   }
   onSubmit(){
-    console.log('login form',this.useForm.value)
+    console.log('login form',this.userForm.value)
   };
   getSkillsArray(): FormArray {
-  return this.useForm.get('skills') as FormArray;
+  return this.userForm.get('skills') as FormArray;
 }
 
 }
