@@ -44,8 +44,8 @@ export class LifeCycle
     this.users = ['Vignesh', 'John', 'Arun'];
   }
 
-   ngOnChanges() {
-    console.log(' ngOnChanges');
+   ngOnChanges(changes: SimpleChanges) {
+    console.log(' ngOnChanges', changes);
   }
 
 

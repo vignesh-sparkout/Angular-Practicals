@@ -1,5 +1,5 @@
 import { Component,OnInit,OnDestroy } from '@angular/core';
-import { Router, NavigationStart,NavigationEnd,NavigationCancel,NavigationError,Event } from '@angular/router';
+import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 
@@ -18,7 +18,7 @@ private routerSub!: Subscription;
 constructor( private router:Router){}
 
 ngOnInit() {
-  this.router.events.subscribe(event => {
+  this.routerSub = this.router.events.subscribe(event => {
 
     console.log(event); 
 
@@ -43,9 +43,9 @@ ngOnInit() {
 log(message:string){
   this.eventLogs.push(message)
 }
-ngOnDestroy() {
-  this.routerSub.unsubscribe();
-  
-}
+  ngOnDestroy() {
+    this.routerSub.unsubscribe();
+    
+  }
 
 }

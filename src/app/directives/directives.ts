@@ -31,7 +31,7 @@ export class DirectivesComponent {
   ];
 
   trackedByMovieId(index: number, movie: Movie) {
-    return movie.id;
+    return movie.id ?? index;
   }
 
   addMovie() {

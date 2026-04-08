@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CustomPipe } from './custom-pipe';
-import { FilterPipe } from '../filter-pipe';
+import { FilterPipe } from './filter-pipe';
 
 @Component({
   selector: 'app-pipes',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ReactiveFormsModule,FormGroup,FormControl,Validators,FormArray, EmailValidator, NgForm } from '@angular/forms';
+import { ReactiveFormsModule, FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 @Component({
   standalone:true,

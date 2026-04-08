@@ -1,8 +1,16 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './auth-guard';
+import { Contact } from './Router/contact/contact';
+import { User } from './Router/user/user';
+import { UserList } from './Router/user-list/user-list';
+
 
 export const routes: Routes = [
+
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'contact', component: Contact },
+  { path: 'user/:id', component:User},
+  {path:'user-list',component:UserList},
 
   {
     path: 'life-cycle',
@@ -46,12 +54,7 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./Router/about/about').then(m => m.About)
   },
-  {
-    path: 'contact',
-    loadComponent: () =>
-      import('./Router/contact/contact').then(m => m.Contact)
-  },
-
+  
   // Param
   {
     path: 'product/:id',
@@ -95,12 +98,6 @@ export const routes: Routes = [
     import ('./reactive-form/reactive-form').then(m =>m.ReactiveForm)
     
   },
-  {
-    path: 'user',
-    loadComponent:() =>
-      import('./user/user').then (m => m.User)
-  },
-
   // 404
   {
     path: '**',
@@ -114,33 +111,33 @@ export const routes: Routes = [
 
 // import { Routes } from '@angular/router';
 // import { authGuard } from './auth-guard';
-
 // import { DataBindingComponent } from './data-binding/data-binding';
-// import { LifeCycleComponent } from './life-cycle/life-cycle';
 // import { DirectivesComponent } from './directives/directives';
 // import { PipesComponent } from './pipes/pipes';
 // import { ParentComponent } from './parent-component/parent-component';
 // import { ServiceComponent } from './service/service';
-
 // import { Home } from './Router/home/home';
 // import { About } from './Router/about/about';
+// import { LifeCycle } from './life-cycle/life-cycle';
 // import { Contact } from './Router/contact/contact';
 // import { Product } from './Router/product/product';
 // import { Dashboard } from './Router/dashboard/dashboard';
 // import { Profile } from './Router/profile/profile';
 // import { RouterEvents } from './Router/router-events/router-events';
 // import { NotFound } from './not-found/not-found';
+// import { User } from './user/user';
 
 // export const routes: Routes = [
 //   { path: '', redirectTo: 'home', pathMatch: 'full' },
 
 //   // Feature Components
-//   { path: 'life-cycle', component: LifeCycleComponent },
+//   { path: 'life-cycle', component: LifeCycle },
 //   { path: 'data-binding', component: DataBindingComponent },
 //   { path: 'directives', component: DirectivesComponent },
 //   { path: 'pipes', component: PipesComponent },
 //   { path: 'parent', component: ParentComponent },
 //   { path: 'service', component: ServiceComponent },
+//   { path: 'user', component: User },
 
 //   // Pages
 //   { path: 'home', component: Home },
@@ -152,8 +149,8 @@ export const routes: Routes = [
 
 //   // Protected + Child Route
 //   {
-//     path: 'dashboard',
-//     component: Dashboard,
+//      path: 'dashboard',
+//      component: Dashboard,
 //     canActivate: [authGuard],
 //     children: [
 //       { path: 'profile', component: Profile }
