@@ -5,5 +5,6 @@ import { Component } from '@angular/core';
   imports: [],
   template: `<h2>Admin Page Loaded</h2>`,
   styleUrl: './profile.css',
+  // templateUrl:'./profile.html'
 })
 export class Profile {}

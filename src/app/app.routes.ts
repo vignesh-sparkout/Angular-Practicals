@@ -3,7 +3,8 @@ import { authGuard } from './auth-guard';
 import { Contact } from './Router/contact/contact';
 import { User } from './Router/user/user';
 import { UserList } from './Router/user-list/user-list';
-
+import { Snapshot } from './snapshot/snapshot';
+import { Subscribe } from './subscribe/subscribe';
 
 export const routes: Routes = [
 
@@ -11,7 +12,8 @@ export const routes: Routes = [
   { path: 'contact', component: Contact },
   { path: 'user/:id', component:User},
   {path:'user-list',component:UserList},
-
+  { path: 'snapshot/:id', component:Snapshot},
+  { path: 'subscribe/:id',component:Subscribe},
   {
     path: 'life-cycle',
     loadComponent: () =>
