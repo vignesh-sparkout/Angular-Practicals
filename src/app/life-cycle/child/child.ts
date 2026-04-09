@@ -8,10 +8,16 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
   styleUrl: './child.css',
 })
 export class Child implements OnChanges {
- @Input() message: string = '';
+    @Input() data: string = '';
+
+  previous: string = '';
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('ngOnChanges:', changes);
+    if (changes['data']) {
+      this.previous = changes['data'].previousValue;
+      console.log('Old:', changes['data'].previousValue);
+      console.log('New:', changes['data'].currentValue);
+    }
   }
 
 }

@@ -1,53 +1,33 @@
 import {
-  Component,
-  OnInit,
-  OnChanges,
-  DoCheck,
-  AfterContentInit,
-  AfterContentChecked,
-  AfterViewInit,
-  AfterViewChecked,
-  OnDestroy,
-  SimpleChanges,
-  Input
-} from '@angular/core';
+  Component,OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked,
+  AfterViewInit,AfterViewChecked, OnDestroy,SimpleChanges,Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Child } from "./child/child";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-life-cycle',
   standalone: true,
-  imports: [CommonModule, Child],
+  imports: [CommonModule, Child,FormsModule],
   templateUrl: './life-cycle.html',
 })
 export class LifeCycle
   implements
-    OnInit,
-    OnChanges,
-    DoCheck,
-    AfterContentInit,
-    AfterContentChecked,
-    AfterViewInit,
-    AfterViewChecked,
-    OnDestroy {
-
-  @Input() value: string = 'Default Value';
-
-
-  
+    OnInit, OnChanges,DoCheck,AfterContentInit,
+    AfterContentChecked,AfterViewInit,AfterViewChecked,OnDestroy {
+  value: string = '';  
   users: string[] = [];
 
   ngOnInit() {
-    console.log('ngOnInit called');
+    console.log('1.ngOnInit called');
 
     // simulate API call
     this.users = ['Vignesh', 'John', 'Arun'];
   }
 
-   ngOnChanges(changes: SimpleChanges) {
-    console.log(' ngOnChanges', changes);
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('2. ngOnChanges', changes);
   }
-
 
   ngDoCheck() {
     console.log('4. ngDoCheck');
@@ -76,4 +56,7 @@ export class LifeCycle
   submit(){
     console.log("click to the submit button")
   }
+
+
+
 }
