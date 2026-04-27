@@ -13,6 +13,7 @@ export class DataBindingComponent {
   title = "String Interpolation";
   btnToggle = true;
   userName = "My Name is";
+  colSpanVal = 2;
   constructor() {
     setTimeout(() => {
       this.btnToggle = false;
@@ -21,5 +22,6 @@ export class DataBindingComponent {
 
   onChangeTitle() {
     this.title = "This is Event Binding";
+    console.log('Event Binding')
   }
 }

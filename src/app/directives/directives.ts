@@ -8,7 +8,7 @@ import { TogglePasswordDirective } from './toggle-password';
 @Component({
   selector: 'app-directives',
   standalone: true,
-  imports: [CommonModule, FormsModule, HighlightDirective,HoverDirective,TogglePasswordDirective] as const,
+  imports: [CommonModule, FormsModule, HighlightDirective,HoverDirective,TogglePasswordDirective],
   templateUrl: './directives.html',
   styleUrls: ['./directives.css'],
 })
@@ -17,7 +17,7 @@ export class DirectivesComponent {
   result: boolean = false;
   grade = "A";
 
-  isActive = true;
+  isActive = false;
 
   textColor = 'pink';
   bgColor = 'black';

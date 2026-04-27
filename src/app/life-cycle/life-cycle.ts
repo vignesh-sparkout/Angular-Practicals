@@ -26,7 +26,7 @@ export class LifeCycle
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('2. ngOnChanges', changes);
+    console.log('2. ngOnChanges');
   }
 
   ngDoCheck() {

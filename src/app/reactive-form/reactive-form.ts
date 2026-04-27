@@ -9,9 +9,10 @@ import { CommonModule } from '@angular/common';
   styleUrl: './reactive-form.css',
 })
 export class ReactiveForm {
+  buttonDisabled = false;
 
   userForm = new FormGroup ({
-    name: new FormControl('',[Validators.required]),
+    names: new FormControl('',[Validators.required]),
     email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, this.passwordValidator]),
     skills : new FormArray([])

@@ -1,15 +1,12 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './auth-guard';
-import { Contact } from './Router/contact/contact';
 import { User } from './Router/user/user';
 import { UserList } from './Router/user-list/user-list';
 import { Snapshot } from './snapshot/snapshot';
 import { Subscribe } from './subscribe/subscribe';
-
 export const routes: Routes = [
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'contact', component: Contact },
   { path: 'user/:id', component:User},
   {path:'user-list',component:UserList},
   { path: 'snapshot/:id', component:Snapshot},
@@ -100,6 +97,14 @@ export const routes: Routes = [
     import ('./reactive-form/reactive-form').then(m =>m.ReactiveForm)
     
   },
+
+  //Observable
+  {
+    path:'observables',
+    loadComponent:() =>
+    import ('./observable/observable').then(m =>m.ObservableComponent)
+  },
+
   // 404
   {
     path: '**',

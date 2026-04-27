@@ -35,12 +35,16 @@ export class Home implements OnInit {
   }
 
   currentTime: string = "";
-count: number = 0;
+  count: number = 0;
 
-startInterval() {
-  setInterval(() => {
-    this.count++;
-    console.log("Running...");
-  }, 1000);
+  ngOnChanges() {
+  }
+
+  startInterval() {
+    setInterval(() => {
+      this.count++;
+      console.log("Running...");
+    }, 1000);
+  }
 }
-}
+
