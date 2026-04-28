@@ -1,4 +1,4 @@
-import { Component, Input,Output,EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-child-component',
@@ -11,18 +11,24 @@ import { Component, Input,Output,EventEmitter } from '@angular/core';
   <button (click)="sendToParent()">Send To Parent </button>
   `
 })
-export class ChildComponent {
+export class ChildComponent implements OnChanges {
   @Input()name!:string;
   @Output() messageEvent = new EventEmitter<string>();
 
-ngOnChanges(changes: any) {
-  console.log(changes)
-
-}
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('ngOnChanges called ');
+    const change = changes['name'];
+    if (changes['name']) {
+    console.log('Old:', changes['value'].previousValue);
+    console.log('New:', changes['value'].currentValue);
+    }
+  }
 ngOnInit() {
   console.log('Component initialized');
 }
   sendToParent(){
    this.messageEvent.emit(`hello From Child`)
 }
+
+
 }

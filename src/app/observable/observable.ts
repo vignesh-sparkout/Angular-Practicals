@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, of, delay, interval, Subscription, take } from 'rxjs';
+import { Observable, of, map, delay, interval, Subscription, take,filter,switchMap, Subject,debounce, debounceTime } from 'rxjs';
 
 @Component({
   selector: 'app-observable',
@@ -12,7 +12,19 @@ export class ObservableComponent implements OnInit, OnDestroy {
   intervalSub!: Subscription;
   // count: number = 0;
   // showComponent: boolean = true; 
+  search$ = new Subject<string>();
+
   ngOnInit() {
+
+    this.search$
+  .pipe(
+    debounceTime(1000),
+    switchMap(term => this.fakeSearchApi(term))
+  )
+  .subscribe(result => {
+    console.log('SEARCH RESULT:', result);
+    this.messages.push(...result);
+  });
 
     //  Custom Observable
     const obs = new Observable<string>(observer => {
@@ -35,8 +47,16 @@ export class ObservableComponent implements OnInit, OnDestroy {
       complete: () => console.log('Custom Completed')
     });
 
+    //map
+    of(10, 20)
+  .pipe(map(x => x + 5))
+  .subscribe(val => console.log(val));
 
-    //   API Simulation
+  of(1, 2, 3, 4)
+  .pipe(filter(x => x > 2))
+  .subscribe(val => console.log(val))
+
+    //  API Simulation
     of(['User1', 'User2'])
       .pipe(delay(2000))
       .subscribe(data => {
@@ -44,12 +64,8 @@ export class ObservableComponent implements OnInit, OnDestroy {
         this.messages.push(...data);
       });
 
+      
 
-    // //  Interval WITHOUT unsubscribe (for testing issue)
-    // interval(1000).subscribe(val => {
-    //   console.log('Running:', val);
-    //   this.count = val;
-    // });
 
     //  Interval (Auto Stop using take)
     interval(1000)
@@ -59,11 +75,20 @@ export class ObservableComponent implements OnInit, OnDestroy {
       });
 
   }
-  // //  simulate component destroy manually
-  // destroy() {
-  //   console.log('Component Destroy button clicked');
-  //   this.showComponent = false;
-  // }
+
+  fakeSearchApi(term: string) {
+  console.log('API CALL FOR:', term);
+
+  return of([
+    term + ' result 1',
+    term + ' result 2'
+  ]).pipe(delay(1000));
+}
+
+onSearchChange(value: string) {
+  this.search$.next(value);
+}
+
 
   ngOnDestroy() {
     console.log('Component Destroy');

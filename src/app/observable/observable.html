@@ -1,6 +1,13 @@
+
+<br>
+<input 
+  type="text" 
+  (input)="onSearchChange($event.target.value)"
+  placeholder="Search here..."
+>
+
 <ul>
   @for (msg of messages; track msg) {
     <li>{{ msg }}</li>
   }
 </ul>
-

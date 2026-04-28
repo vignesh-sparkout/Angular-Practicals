@@ -10,20 +10,27 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, Child,FormsModule],
   templateUrl: './life-cycle.html',
+
 })
 export class LifeCycle
   implements
     OnInit, OnChanges,DoCheck,AfterContentInit,
     AfterContentChecked,AfterViewInit,AfterViewChecked,OnDestroy {
-  value: string = '';  
+   value: string = 'vicky';  
   users: string[] = [];
+  currentTime: string = "";
+   count: number = 0;
 
   ngOnInit() {
-    console.log('1.ngOnInit called');
+    console.log('3.ngOnInit called');
 
     // simulate API call
     this.users = ['Vignesh', 'John', 'Arun'];
   }
+
+    constructor(){
+      console.log('1.Constructor')
+    }
 
   ngOnChanges(changes: SimpleChanges) {
     console.log('2. ngOnChanges');
@@ -46,6 +53,7 @@ export class LifeCycle
   }
 
   ngAfterViewChecked() {
+
     console.log('8. ngAfterViewChecked');
   }
 
@@ -56,7 +64,5 @@ export class LifeCycle
   submit(){
     console.log("click to the submit button")
   }
-
-
 
 }

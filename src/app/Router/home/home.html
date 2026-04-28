@@ -4,6 +4,9 @@
 <button (click)="goToProduct(1)">Product 1</button>
 <button (click)="goToProduct(2)">Product 2</button>
 <button (click)="goToProduct(3)">Product 3</button>
+<!-- <button *ngFor="let user of users" (click)="goToProduct(user)">
+  View {{ user }}
+</button> -->
 
 <ul>
   <li *ngFor="let user of users">{{ user }}</li>

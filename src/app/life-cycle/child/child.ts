@@ -19,5 +19,8 @@ export class Child implements OnChanges {
       console.log('New:', changes['data'].currentValue);
     }
   }
+  ngOnInit() {
+    console.log('ngOnInit')
+  }
 
 }
