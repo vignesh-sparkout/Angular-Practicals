@@ -3,6 +3,7 @@ import { Observable, of, map, delay, interval, Subscription, take,filter,switchM
 
 @Component({
   selector: 'app-observable',
+  standalone: true,
   templateUrl: './observable.html',
   styleUrls: ['./observable.css']
 })

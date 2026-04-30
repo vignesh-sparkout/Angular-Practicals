@@ -55,13 +55,14 @@
               [formControlName]="i"
               type="text"
               placeholder="Add a skill" />
+            <button type="button" (click)="removeSkill(i)">Remove</button>
           </div>
         </div>
       </div>
 
       <!-- Actions -->
       <div class="actions">
-        <button type="button" (click)="removeSkill()">Add Skill</button>
+        <button type="button" (click)="addSkill()">Add Skill</button>
       </div>
 
       <div class="actions">

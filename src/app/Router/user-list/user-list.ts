@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
+  standalone: true,
   imports: [],
   templateUrl: './user-list.html',
   styleUrl: './user-list.css',
@@ -23,4 +24,3 @@ constructor(private router: Router) {}
     });
   }
 }
-

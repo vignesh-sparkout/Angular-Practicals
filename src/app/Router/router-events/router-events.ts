@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-router-events',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './router-events.html',
   styleUrl: './router-events.css',
@@ -19,25 +20,25 @@ constructor( private router:Router){}
 
 ngOnInit() {
   this.routerSub = this.router.events.subscribe(event => {
-
-    console.log(event); 
-
     if (event instanceof NavigationStart) {
-      console.log('START:', event.url);
+      this.loading = true;
+      this.log(`START: ${event.url}`);
     }
 
     if (event instanceof NavigationEnd) {
-      console.log('END:', event.url);
+      this.loading = false;
+      this.log(`END: ${event.urlAfterRedirects}`);
     }
 
     if (event instanceof NavigationCancel) {
-      console.log('CANCEL:', event.url);
+      this.loading = false;
+      this.log(`CANCEL: ${event.url}`);
     }
 
     if (event instanceof NavigationError) {
-      console.log('ERROR:', event.url);
+      this.loading = false;
+      this.log(`ERROR: ${event.url}`);
     }
-
   });
 }
 log(message:string){

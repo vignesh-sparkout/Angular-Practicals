@@ -6,7 +6,7 @@
   [routerLinkActiveOptions]="{ exact: true }">
   Home
 </a>
-    <a href="/about" >About</a>   <!-- Whole page Reload-->
+    <a routerLink="/about" routerLinkActive="active">About</a>
     <a routerLink="/life-cycle" routerLinkActive="active">Lifecycle</a>
     <a routerLink="/data-binding" routerLinkActive="active">Data Binding</a>
     <a routerLink="/directives" routerLinkActive="active">Directives</a>
@@ -25,6 +25,8 @@
     <a [routerLink]="['/subscribe', 101]">Sub 101</a>
     <a [routerLink]="['/subscribe', 102]">Sub 102</a>
     <a [routerLink]="['/subscribe', 103]">Sub 103</a>
+    <a routerLink="/sender">Sender</a>
+    <a routerLink="/receiver">Receiver</a>
 
   </nav>
 </header>

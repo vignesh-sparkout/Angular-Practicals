@@ -12,7 +12,7 @@ export class ReactiveForm {
   buttonDisabled = false;
 
   userForm = new FormGroup ({
-    names: new FormControl('',[Validators.required]),
+    name: new FormControl('',[Validators.required]),
     email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, this.passwordValidator]),
     skills : new FormArray([])
@@ -20,16 +20,19 @@ export class ReactiveForm {
 
 //Custom Validator
 passwordValidator(control:any){
-  if (control.value.length <6) {
+  if ((control.value ?? '').length <6) {
     return {weakPassword:true}
   }
   return null;
 }
 
 //FormArray
-  removeSkill(){
+  addSkill(){
     (this.userForm.get('skills') as FormArray)
     .push(new FormControl(''))
+  }
+  removeSkill(index: number){
+    (this.userForm.get('skills') as FormArray).removeAt(index);
   }
   onSubmit(){
     console.log('login form',this.userForm.value)

@@ -11,11 +11,25 @@ export const routes: Routes = [
   {path:'user-list',component:UserList},
   { path: 'snapshot/:id', component:Snapshot},
   { path: 'subscribe/:id',component:Subscribe},
+
   {
     path: 'life-cycle',
     loadComponent: () =>
       import('./life-cycle/life-cycle').then(m => m.LifeCycle)
   },
+
+  {
+    path: 'sender',
+    loadComponent: () =>
+      import('./Subject/sender/sender').then(m => m.Sender)
+  },
+
+    {
+    path: 'receiver',
+    loadComponent: () =>
+      import('./Subject/receiver/receiver').then(m => m.Receiver)
+  },
+
   {
     path: 'data-binding',
     loadComponent: () =>
@@ -26,6 +40,8 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./directives/directives').then(m => m.DirectivesComponent)
   },
+
+  
   {
     path: 'pipes',
     loadComponent: () =>
@@ -104,13 +120,13 @@ export const routes: Routes = [
     loadComponent:() =>
     import ('./observable/observable').then(m =>m.ObservableComponent)
   },
-
   // 404
   {
     path: '**',
     loadComponent: () =>
       import('./not-found/not-found').then(m => m.NotFound)
   }
+  
 ];
 
 

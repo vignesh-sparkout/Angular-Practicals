@@ -1,8 +1,9 @@
 
 <br>
 <input 
+  #searchBox
   type="text" 
-  (input)="onSearchChange($event.target.value)"
+  (input)="onSearchChange(searchBox.value)"
   placeholder="Search here..."
 >
 

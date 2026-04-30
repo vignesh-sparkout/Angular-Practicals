@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-user',
+  standalone: true,
   imports: [],
   templateUrl: './user.html',
   styleUrl: './user.css',
