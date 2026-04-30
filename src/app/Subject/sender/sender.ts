@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data-service';
 import { CommonModule } from '@angular/common';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-sender',

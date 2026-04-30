@@ -61,4 +61,14 @@ export class PipesComponent {
     { name: 'Aravind' },
     { name: 'Kishore' }
   ];
+  //  PURE PIPE TEST (immutable)
+  addUserPure() {
+    this.users = [...this.users, { name: 'Pure User' }];
+  }
+
+  //   (for impure test)
+  addUserImpure() {
+    this.users.push({ name: 'Impure User' });
+  }
+
 }

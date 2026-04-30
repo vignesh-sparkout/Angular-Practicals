@@ -67,7 +67,9 @@
 
   <div *ngFor="let user of users | filter:searchText">
     {{ user.name }}
-  </div>
+  </div><br>
+<button (click)="addUserPure()">Add User (Pure)</button>
+<button (click)="addUserImpure()">Add User (Impure)</button>  
 </section>
   
   
