@@ -39,7 +39,6 @@ export class LifeCycle implements OnInit, OnChanges,DoCheck {
       ngOnInit(): void {
         this.message = "Welcome to Angular"
         console.log('OnInit Called') 
-
        
       }
     //DoCheck

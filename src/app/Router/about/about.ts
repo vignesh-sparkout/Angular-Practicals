@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
-export class About {}
+export class About {
+
+name ='vicky'
+isdisabled= true;
+
+Fruits = 'apple'
+
+changeFruits(){
+this.Fruits ='mango'
+}
+}
