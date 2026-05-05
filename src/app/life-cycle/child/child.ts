@@ -8,19 +8,17 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
   styleUrl: './child.css',
 })
 export class Child implements OnChanges {
-    @Input() data: string = '';
+    @Input() items:any [] = []
+    @Input() title = '';
 
-  previous: string = '';
+    ngOnChanges(changes: SimpleChanges): void {
+      if(changes['items']){
+        console.log('items Property Changed', changes['items'])
+      }
+      if(changes['title']){
+        console.log('title Property Changed', changes['title'])
+      }
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['data']) {
-      this.previous = changes['data'].previousValue;
-      console.log('Old:', changes['data'].previousValue);
-      console.log('New:', changes['data'].currentValue);
     }
-  }
-  ngOnInit() {
-    console.log('ngOnInit')
-  }
 
 }

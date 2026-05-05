@@ -1,19 +1,17 @@
 <h2> Life-cycle</h2>
-<p><strong>Value:</strong> {{ value }}</p>
 
-<label >enter value</label> 
-<input type="text">
-<button (click)="submit()">Click</button>
- 
-<h2>ngOnInit Example</h2>
-<div>
-<ul>
-  <li *ngFor="let user of users">{{ user }}</li>
-</ul>
-</div>
- <h2>Parent Component</h2>
-    <input [(ngModel)]="value" placeholder="Type here">
-    <p><b>Parent Value:</b> {{ value }}</p>
+  <input type=" text" name="title" [(ngModel)]="title"> <!--OnChanges-->
+  <p>{{message}}</p>  <!--OnInit-->
+  <input type="text" name="furniture" [(ngModel)]="furniture" >
 
-    <app-child [data]="value"></app-child>
+<h2>ngAfterContentInit</h2>
+
+
+
+
+  <app-simple-message>
+    <p #messageContent>Hello Angular</p>
+    <p #messageContent>This is a Simple message</p>
+  </app-simple-message>
+  <app-child [items]="itemList" [title]="title"></app-child>
 

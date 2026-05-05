@@ -1,68 +1,53 @@
 import {
-  Component,OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked,
-  AfterViewInit,AfterViewChecked, OnDestroy,SimpleChanges,Input} from '@angular/core';
+  Component,OnInit, OnChanges, DoCheck,  
+  SimpleChanges,} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Child } from "./child/child";
 import { FormsModule } from '@angular/forms';
+import { SimpleMessage } from "./simple-message/simple-message";
 
 @Component({
   selector: 'app-life-cycle',
   standalone: true,
-  imports: [CommonModule, Child,FormsModule],
+  imports: [CommonModule, Child, FormsModule, SimpleMessage],
   templateUrl: './life-cycle.html',
 
 })
-export class LifeCycle
-  implements
-    OnInit, OnChanges,DoCheck,AfterContentInit,
-    AfterContentChecked,AfterViewInit,AfterViewChecked,OnDestroy {
-   value: string = 'vicky';  
-  users: string[] = [];
-  currentTime: string = "";
-   count: number = 0;
+export class LifeCycle implements OnInit, OnChanges,DoCheck {  
 
-  ngOnInit() {
-    console.log('3.ngOnInit called');
 
-    // simulate API call
-    this.users = ['Vignesh', 'John', 'Arun'];
-  }
+        
 
-    constructor(){
-      console.log('1.Constructor')
-    }
+      //ngOnChanges
+      itemList = [
+        {id:1, Name:'Vicky'},
+        {id:2, Name:'Aravind'},
+        {id:3, Name:'Dhina'},
+        {id:4, Name:'Ram'},
+        {id:5, Name:'Lokesh'}
+      ]
+      title = 'Movies'
+      message=''
+      furniture='Wooden Table'
+      prevFurniture='Wooden Table'
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log('2. ngOnChanges');
-  }
+      ngOnChanges(changes: SimpleChanges): void {
+        console.log('ngOnChanges Called')
+      }
 
-  ngDoCheck() {
-    console.log('4. ngDoCheck');
-  }
+      //OnInit
+      ngOnInit(): void {
+        this.message = "Welcome to Angular"
+        console.log('OnInit Called') 
 
-  ngAfterContentInit() {
-    console.log('5. ngAfterContentInit');
-  }
+       
+      }
+    //DoCheck
+      ngDoCheck(): void {
+       if (this.furniture !== this.prevFurniture) {
+        console.log('Property Chnaged',this.furniture)
+        this.prevFurniture = this.furniture
+        }
+      } 
 
-  ngAfterContentChecked() {
-    console.log('6. ngAfterContentChecked');
-  }
-
-  ngAfterViewInit() {
-    console.log('7. ngAfterViewInit');
-  }
-
-  ngAfterViewChecked() {
-
-    console.log('8. ngAfterViewChecked');
-  }
-
-  ngOnDestroy() {
-    console.log('9. ngOnDestroy');
-  }
-
-  submit(){
-    console.log("click to the submit button")
-  }
-
-}
+} 
