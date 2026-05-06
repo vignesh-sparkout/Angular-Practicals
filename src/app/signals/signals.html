@@ -1,0 +1,13 @@
+
+<h2>{{count()}}</h2>
+
+<button (click)="increment()">+</button> &nbsp;
+<button (click)="decrement()">-</button>
+<br>
+<hr>
+<input (input)="search.set($any($event.target).value)" />
+
+<div *ngFor="let user of filteredUsers()">
+  {{ user.name }}
+</div>
+

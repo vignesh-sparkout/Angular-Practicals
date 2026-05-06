@@ -114,6 +114,12 @@ export const routes: Routes = [
     
   },
 
+  {
+    path:'signals',
+    loadComponent:() =>
+    import ('./signals/signals').then(m =>m.Signals)
+  },
+
   //Observable
   {
     path:'observables',
