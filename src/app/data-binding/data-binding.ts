@@ -24,4 +24,8 @@ export class DataBindingComponent {
     this.title = "This is Event Binding";
     console.log('Event Binding')
   }
+
+show(value:any){
+  console.log('value')
+}
 }

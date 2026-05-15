@@ -1,0 +1,140 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="submitForm()">
+
+  <div formArrayName="users">
+
+    <div
+      *ngFor="
+        let user of users.controls;
+        let i = index
+      "
+      [formGroupName]="i"
+      class="user-form">
+
+      <h3>User {{ i + 1 }}</h3>
+
+      <!-- Username -->
+
+      <input
+        type="text"
+        formControlName="username"
+        placeholder="Username"
+      >
+
+      <div
+        *ngIf="
+          user.get('username')?.touched &&
+          user.get('username')?.invalid
+        ">
+
+        <small
+          *ngIf="
+            user.get('username')?.errors?.['required']
+          ">
+          Username is required
+        </small>
+
+      </div>
+
+      <br><br>
+
+      <!-- Email -->
+
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Email"
+      >
+
+      <div
+        *ngIf="
+          user.get('email')?.touched &&
+          user.get('email')?.invalid
+        ">
+
+        <small
+          *ngIf="
+            user.get('email')?.errors?.['required']
+          ">
+          Email is required
+        </small>
+
+        <small
+          *ngIf="
+            user.get('email')?.errors?.['email']
+          ">
+          Invalid email
+        </small>
+
+      </div>
+
+      <br><br>
+
+      <!-- Password -->
+
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+      >
+
+      <div
+        *ngIf="
+          user.get('password')?.touched &&
+          user.get('password')?.invalid
+        ">
+
+        <small
+          *ngIf="
+            user.get('password')?.errors?.['required']
+          ">
+          Password is required
+        </small>
+
+        <small
+          *ngIf="
+            user.get('password')?.errors?.['minlength']
+          ">
+          Minimum 6 characters
+        </small>
+
+      </div>
+
+      <br><br>
+
+      <!-- Remove -->
+
+      <button
+        type="button"
+        (click)="removeUser(i)">
+
+        Remove User
+
+      </button>
+
+      <hr>
+
+    </div>
+
+  </div>
+
+  <!-- Add -->
+
+  <button
+    type="button"
+    (click)="addUser()">
+
+    Add User
+
+  </button>
+
+  <!-- Submit -->
+
+  <button type="submit">
+
+    Submit
+
+  </button>
+
+</form>

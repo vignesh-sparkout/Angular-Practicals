@@ -1,5 +1,5 @@
 import { Component,  OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { UserService } from '../../service/user';
 import { CommonModule } from '@angular/common';
 
@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-home',
   standalone:true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './home.html',
   styleUrls:['./home.css'] 
   
@@ -37,7 +37,6 @@ export class Home implements OnInit  {
 //   });
 // }
   
-
   startInterval() {
     setInterval(() => {
       this.count++;
@@ -45,4 +44,3 @@ export class Home implements OnInit  {
     }, 1000);
   }
 }
-

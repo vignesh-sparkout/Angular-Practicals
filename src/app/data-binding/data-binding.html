@@ -27,6 +27,12 @@
 <!-- Two Way Binding -->
 <div class="container two-way">
   <h3>Two Way Binding</h3>
-  <input type="text" [(ngModel)]="userName" placeholder="Enter Your Name">
+  <input type="text" [ngModel]="userName" placeholder="Enter Your Name">
   <p>Your name: {{ userName }}</p>
 </div> 
+
+
+<!--template reference variable-->
+
+<input #nameInput>
+<button (click)="show(nameInput.value)">show</button>

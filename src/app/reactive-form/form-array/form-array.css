@@ -1,0 +1,77 @@
+/* Form Container */
+
+form {
+  width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+/* Each User Form */
+
+.user-form {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background: white;
+}
+
+/* Heading */
+
+h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Inputs */
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Error Message */
+
+small {
+  color: red;
+  font-size: 12px;
+}
+
+/* Buttons */
+
+button {
+  padding: 10px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Add Button */
+
+button[type="button"] {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Submit Button */
+
+button[type="submit"] {
+  background-color: green;
+  color: white;
+}
+
+/* Hover */
+
+button:hover {
+  opacity: 0.9;
+}

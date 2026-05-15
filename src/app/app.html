@@ -3,10 +3,10 @@
     <a 
   routerLink="/home" 
   routerLinkActive="active" 
-  [routerLinkActiveOptions]="{ exact: true }">
+  >
   Home
 </a>
-    <a routerLink="/about" routerLinkActive="active">About</a>
+    <a href="/about" routerLinkActive="active">About</a>
     <a routerLink="/life-cycle" routerLinkActive="active">Lifecycle</a>
     <a routerLink="/data-binding" routerLinkActive="active">Data Binding</a>
     <a routerLink="/directives" routerLinkActive="active">Directives</a>
@@ -16,8 +16,8 @@
     <a routerLink="/dashboard"routerLinkActive="active">Dashboard</a>
     <a routerLink="/template-driven"routerLinkActive="active">Template-Driven</a>
     <a routerLink="/reactive-form"routerLinkActive="active">Reactive-Form</a>
-   <a routerLink="/signals"routerLinkActive="active">Signals</a>
-
+    <a routerLink="/form-array" routerLinkActive="active">Form Array</a>
+    <a routerLink="/signals"routerLinkActive="active">Signals</a>
     <a routerLink="/user/101" routerLinkActive="active"
        [queryParams]="{ name: 'Vicky', role: 'admin' }" >
       Users

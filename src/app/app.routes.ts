@@ -62,8 +62,9 @@ export const routes: Routes = [
   {
     path: 'home',
     loadComponent: () =>
-      import('./Router/home/home').then(m => m.Home)
+      import('./Router/home/home').then(m => m.Home),
   },
+
   {
     path: 'about',
     loadComponent: () =>
@@ -111,6 +112,14 @@ export const routes: Routes = [
     path:'reactive-form',
     loadComponent:() =>
     import ('./reactive-form/reactive-form').then(m =>m.ReactiveForm)
+    
+  },
+
+    // Reactive-Forms
+  {
+    path:'form-array',
+    loadComponent:() =>
+    import ('./reactive-form/form-array/form-array').then(m =>m.FormArrayComponent)
     
   },
 
